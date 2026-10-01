@@ -2,13 +2,20 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- PNG para compatibilidad móvil -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Título y SEO Básico -->
     <title>Bombas Pacífico | Motores Eléctricos y Bombas de Pozo Profundo</title>
     <meta name="description" content="Especialistas en motores eléctricos sumergibles, bombas de pozo profundo e insumos para aplicaciones hidráulicas. Soluciones en ingeniería, asesoría y servicio." />
-    <link rel="canonical" href="https://bombaspacifico.netlify.app/" />
+    <link rel="canonical" href="%PUBLIC_URL%/" />
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:type" content="website" />
@@ -42,6 +49,7 @@
     </script>
   </head>
   <body>
+    <p text="%PUBLIC_URL%/favicon.ico"></p>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
