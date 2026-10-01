@@ -1,11 +1,14 @@
 import './main.css'
 
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root')
+createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <Suspense fullback={null}>
+      <App />
+    </Suspense>
   </StrictMode>
 )
