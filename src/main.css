@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@plugin "daisyui" {
+  /* themes: light --default, dark, corporate; */
+  themes: false;
+}
+
+@layer components {
+  .nav-link-desktop {
+    @apply bg-none! border-b-4 border-white px-4 py-2 transition-colors text-lg;
+    @apply hover:bg-blue-900! hover:text-white! hover:border-blue-900!;
+  }
+
+  .nav-link-mobile {
+    @apply bg-none! px-2 py-4 transition-colors text-lg;
+    @apply active:bg-blue-900! active:text-white!;
+    @apply focus:bg-blue-900! focus:text-white!;
+  }
+}
