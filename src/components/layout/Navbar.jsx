@@ -9,12 +9,12 @@ const navItems = [
 ]
 
 const getMobileLinkClasses = ({ isActive }) => `nav-link-mobile ${isActive ? 'bg-blue-900! text-white!' : ''}`
-const getDesktopLinkClasses = ({ isActive }) => `nav-link-desktop ${isActive ? 'border-blue-900!' : ''}`
+const getDesktopLinkClasses = ({ isActive }) => `nav-link-desktop ${isActive ? 'border-b-blue-900!' : ''}`
 
 const Navbar = () => {
   return (
     <div className='w-full shadow-sm'>
-      <p className='p-1 text-center text-white bg-blue-900'>
+      <p className='p-1 text-center text-white bg-blue-900 text-xs lg:text-base'>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, labore!
       </p>
       <div className='container mx-auto'>
@@ -50,7 +50,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className='navbar-end'>
-            <button className='btn bg-blue-900 text-white px-8'>
+            <button className='btn bg-blue-900 text-white px-8 py-6'>
               Cotizar
               <svg className='hidden lg:flex' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
                 <path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M22 12H2m16 4l4-4l-4-4' />
