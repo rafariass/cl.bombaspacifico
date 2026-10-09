@@ -36,7 +36,7 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-            <img src='/logo.jpg' className='w-48 object-contain' alt='Logotipo de la empresa' />
+            <img src='./logo.png' className='w-48 object-contain py-3' alt='Logotipo de la empresa' />
           </div>
           <div className='navbar-center hidden lg:flex'>
             <ul className='menu menu-horizontal p-0'>
