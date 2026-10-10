@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router'
 
 const NAV_ITEMS = [
@@ -12,11 +12,16 @@ const ref = 'https://wa.me/56961729686?text=Hola%2C%20quisiera%20solicitar%20una
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const handleNavbarBlur = (event) => {
-    if (!event.currentTarget.contains(event.relatedTarget)) {
-      setIsMenuOpen(false)
-    }
-  }
+  const navbarRef = useRef(null)
+
+  const handleNavbarBlur = (event) => !event.currentTarget.contains(event.relatedTarget) && setIsMenuOpen(false)
+
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const handleClickOutside = (event) => !navbarRef.current?.contains(event.target) && setIsMenuOpen(false)
+    document.addEventListener('pointerdown', handleClickOutside)
+    return () => document.removeEventListener('pointerdown', handleClickOutside)
+  }, [isMenuOpen])
 
   return (
     <header className='site-header'>
@@ -24,7 +29,7 @@ const Navbar = () => {
         Estamos disponibles para asesorarte y ayudarte a elegir los productos y servicios adecuados.
       </p>
       <div className='site-header-container'>
-        <div className='navbar' onBlur={handleNavbarBlur}>
+        <div ref={navbarRef} className='navbar' onBlur={handleNavbarBlur}>
           <div className='navbar-brand-group'>
             <button
               type='button'
