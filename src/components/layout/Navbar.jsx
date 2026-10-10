@@ -1,65 +1,69 @@
-import { NavLink } from 'react-router'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router'
 
-const navItems = [
+const NAV_ITEMS = [
   { to: '/', label: 'Inicio' },
   { to: '/productos', label: 'Productos' },
   { to: '/servicios', label: 'Servicios' },
-  { to: '/energia-solar', label: 'Energía Solar' },
   { to: '/conocenos', label: 'Conócenos' }
 ]
 
-const getMobileLinkClasses = ({ isActive }) => `nav-link-mobile ${isActive ? 'bg-blue-900! text-white!' : ''}`
-const getDesktopLinkClasses = ({ isActive }) => `nav-link-desktop ${isActive ? 'border-b-blue-900!' : ''}`
+const ref = 'https://wa.me/56961729686?text=Hola%2C%20quisiera%20solicitar%20una%20cotizaci%C3%B3n.'
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const handleNavbarBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setIsMenuOpen(false)
+    }
+  }
+
   return (
-    <div className='w-full shadow-sm'>
-      <p className='p-1 text-center text-white bg-blue-900 text-xs lg:text-base'>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, labore!
+    <header className='site-header'>
+      <p className='site-header-banner'>
+        Estamos disponibles para asesorarte y ayudarte a elegir los productos y servicios adecuados.
       </p>
-      <div className='container mx-auto'>
-        <div className='navbar bg-base-100 py-0'>
-          <div className='navbar-start'>
-            <div className='dropdown'>
-              <div tabIndex={0} role='button' className=' px-1 btn btn-ghost lg:hidden'>
-                <svg aria-label='Menu' xmlns='http://www.w3.org/2000/svg' className='h-8 w-8' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M4 6h16M4 12h8m-8 6h16' />
-                </svg>
-              </div>
-              <ul tabIndex={-1} className='menu dropdown-content bg-white! rounded-box z-1 mt-3 w-52 p-2 shadow'>
-                {navItems.map((item) => (
-                  <li key={`Mobile-${item.to}`} className=''>
-                    <NavLink to={item.to} className={getMobileLinkClasses} onClick={() => document.activeElement?.blur()}>
-                      {item.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <img src='./logo.png' className='w-48 object-contain py-3' alt='Logotipo de la empresa' />
+      <div className='site-header-container'>
+        <div className='navbar' onBlur={handleNavbarBlur}>
+          <div className='navbar-brand-group'>
+            <button
+              type='button'
+              className='navbar-toggle'
+              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-controls='main-navigation'
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
+              <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                <path d={isMenuOpen ? 'M6 6l12 12M18 6L6 18' : 'M4 6h16M4 12h16M4 18h16'} />
+              </svg>
+            </button>
+            <Link to='/' className='navbar-brand' aria-label='Ir al inicio' onClick={() => setIsMenuOpen(false)}>
+              <img src='./logo.png' alt='Logotipo de Bombas Pacífico' />
+            </Link>
           </div>
-          <div className='navbar-center hidden lg:flex'>
-            <ul className='menu menu-horizontal p-0'>
-              {navItems.map((item) => (
-                <li key={`Mobile-${item.to}`} className=''>
-                  <NavLink to={item.to} className={getDesktopLinkClasses}>
+          <nav id='main-navigation' className='main-navigation' aria-label='Navegación principal' data-open={isMenuOpen}>
+            <ul className='navbar-menu'>
+              {NAV_ITEMS.map((item) => (
+                <li key={item.to}>
+                  <NavLink to={item.to} end className='nav-link' onClick={() => setIsMenuOpen(false)}>
                     {item.label}
                   </NavLink>
                 </li>
               ))}
             </ul>
-          </div>
-          <div className='navbar-end'>
-            <button className='btn bg-blue-900 text-white px-8 py-6'>
+          </nav>
+          <div className='navbar-actions'>
+            <a href={ref} className='navbar-quote' target='_blank' rel='noopener noreferrer' aria-label='Solicitar cotización por WhatsApp'>
               Cotizar
-              <svg className='hidden lg:flex' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-                <path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M22 12H2m16 4l4-4l-4-4' />
+              <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                <path d='M22 12H2m16 4l4-4-4-4' />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

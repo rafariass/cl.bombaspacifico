@@ -1,19 +1,238 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  /* themes: light --default, dark, corporate; */
   themes: false;
 }
 
+@theme {
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --default-font-family: var(--font-sans);
+}
+
 @layer components {
-  .nav-link-desktop {
-    @apply bg-none! border-y-4 border-white px-4 py-2 transition-colors text-lg;
-    @apply hover:border-y-blue-900! hover:bg-blue-900! hover:text-white!;
+  .site-header {
+    @apply relative z-50 w-full border-b border-blue-900/10 bg-white shadow;
+
+    & .site-header-banner {
+      @apply relative overflow-hidden px-4 py-2 text-center text-xs font-medium text-white;
+      @apply md:text-sm;
+
+      background-image: linear-gradient(
+        110deg,
+        rgb(0 45 115) 0%,
+        rgb(0 75 155) 50%,
+        rgb(0 65 140) 100%
+      );
+
+      &::after {
+        content: '';
+
+        @apply pointer-events-none absolute -top-25 -right-5 h-45 w-2/5 rounded-full bg-cyan-500/15;
+      }
+    }
+
+    & .site-header-container {
+      @apply container mx-auto px-6 lg:px-8 lg:py-2;
+    }
+
+    & .navbar {
+      @apply relative flex min-h-20 items-center justify-between gap-3 p-0!;
+      @apply lg:min-h-24 lg:gap-6;
+
+      & .navbar-brand-group {
+        @apply flex min-w-0 items-center gap-2 w-full justify-between;
+
+        & .navbar-toggle {
+          @apply inline-flex size-11 items-center justify-center rounded-xl;
+          @apply bg-blue-900/5 text-blue-900 transition-colors;
+          @apply lg:hidden;
+
+          & svg {
+            @apply size-6;
+          }
+
+          &:hover {
+            @apply bg-blue-900/10;
+          }
+
+          &:focus-visible {
+            @apply outline-2 outline-offset-2 outline-blue-900;
+          }
+        }
+
+        & .navbar-brand {
+          @apply inline-flex shrink-0 items-center;
+
+          & img {
+            @apply w-36 object-contain;
+            @apply sm:w-44 lg:w-48;
+          }
+        }
+      }
+
+      & .main-navigation {
+        @apply absolute inset-x-0 top-full z-30 mt-2 hidden rounded-2xl;
+        @apply border border-blue-900/10 bg-white p-2 shadow-xl;
+        @apply lg:static lg:ml-auto lg:mt-0 lg:block lg:w-auto lg:rounded-none;
+        @apply lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none;
+
+        &[data-open='true'] {
+          @apply block;
+        }
+
+        & .navbar-menu {
+          @apply m-0 flex list-none flex-col gap-1 p-0;
+          @apply lg:flex-row lg:items-center lg:gap-2;
+
+          & a.nav-link {
+            @apply flex items-center rounded-xl px-4 py-3 text-base font-medium;
+            @apply bg-none! bg-transparent text-slate-700 transition-colors duration-150;
+            @apply lg:px-5 lg:py-3;
+
+            &:hover {
+              @apply bg-blue-900/10!;
+            }
+
+            &:focus-visible {
+              @apply outline-2 outline-offset-2 outline-blue-900;
+            }
+
+            &:active,
+            &.active {
+              @apply bg-blue-900! text-white! shadow-sm;
+            }
+          }
+        }
+      }
+
+      & .navbar-actions {
+        @apply hidden lg:flex shrink-0 items-center;
+
+        & .navbar-quote {
+          @apply inline-flex shrink-0 items-center justify-center gap-2;
+          @apply self-start rounded-2xl px-4 py-3 text-sm font-semibold text-white;
+          @apply shadow-lg transition-all duration-150;
+          @apply sm:px-6;
+
+          background-image: linear-gradient(
+            110deg,
+            #0074D9 0%,
+            #0056B3 45%,
+            #0A1B6B 100%
+          );
+
+          &:hover {
+            @apply -translate-y-0.5 shadow-xl;
+          }
+
+          &:active {
+            @apply translate-y-0 shadow-sm;
+          }
+
+          &:focus-visible {
+            @apply outline-2 outline-offset-2 outline-blue-900;
+          }
+        }
+      }
+    }
   }
 
-  .nav-link-mobile {
-    @apply bg-none! px-2 py-4 transition-colors text-lg;
-    @apply active:bg-blue-900! active:text-white!;
-    @apply focus:bg-blue-900! focus:text-white!;
+
+
+
+
+
+
+
+
+
+  .footer {
+    @apply relative overflow-hidden;
+
+    background-image:
+      linear-gradient(
+        110deg,
+        rgb(0 45 115 / 95%) 0%,
+        rgb(0 75 155 / 90%) 50%,
+        rgb(0 65 140 / 55%) 100%
+      ),
+      url('/images/footer-background.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -10%;
+      width: 90%;
+      height: 180px;
+      background: rgb(0 150 220 / 20%);
+      border-radius: 50% 50% 0 0;
+      transform: rotate(5deg);
+      pointer-events: none;
+    }
+
+    & .footer-cta-wave {
+      @apply absolute top-0 left-0 w-full pointer-events-none;
+
+      height: 120px;
+      z-index: 1;
+
+      & path {
+        fill: white;
+      }
+    }
+
+    & .footer-container {
+      @apply container relative z-10 mx-auto px-6 pt-32 pb-16;
+      @apply lg:px-8;
+
+      & .footer-content {
+        @apply flex flex-col gap-8;
+        @apply lg:flex-row lg:items-center lg:justify-between;
+
+        & .footer-info {
+          @apply max-w-4xl text-white;
+
+          & .footer-info-title {
+            @apply mb-4 text-2xl font-bold;
+            @apply md:text-3xl;
+          }
+
+          & .footer-info-description {
+            @apply text-base text-white/90;
+            @apply md:text-xl;
+          }
+        }
+
+        & .btn-footer {
+          @apply inline-flex shrink-0 items-center justify-center gap-2;
+          @apply self-start rounded-2xl bg-white px-10 py-5;
+          @apply font-semibold;
+          @apply lg:self-center;
+          @apply max-sm:w-full;
+
+          transition: background-color 200ms ease, transform 200ms ease;
+
+          &:hover {
+            @apply text-blue-900;
+
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            @apply shadow-xl;
+
+            transform: translateY(0);
+          }
+        }
+      }
+    }
   }
 }
