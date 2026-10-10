@@ -141,14 +141,154 @@
     }
   }
 
+  .hero {
+    @apply relative flex min-h-150 items-center overflow-hidden;
+    @apply lg:min-h-175 xl:min-h-225;
+    @apply border-b border-white;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgb(0 20 55 / 95%) 0%,
+        rgb(0 35 85 / 85%) 30%,
+        rgb(0 55 110 / 45%) 55%,
+        transparent 85%
+      ),
+      url('/assets/imgs/hero/hero_tecnicos.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 
+    & .hero-container {
+      @apply container relative z-10 mx-auto px-6 py-24;
+      @apply lg:px-8 lg:py-32;
 
+      & .hero-container-content {
+        @apply max-w-2xl text-white;
 
+        & .hero-title {
+          @apply mb-6 text-4xl font-bold leading-tight;
+          @apply md:text-5xl lg:text-6xl;
 
+          text-shadow: 0 2px 4px rgb(0 0 0 / 30%);
 
+          & span {
+            @apply text-cyan-500;
+          }
+        }
 
+        & .hero-description {
+          @apply mb-8 max-w-xl text-base leading-relaxed text-white/90;
+          @apply md:text-lg lg:text-xl;
+        }
 
+        & .hero-button {
+          @apply inline-flex items-center justify-center gap-4;
+          @apply rounded-2xl px-10 py-4 font-semibold bg-cyan-500 text-white;
+          @apply shadow-lg transition-all duration-150;
+          @apply w-full sm:hidden;
+
+          & svg {
+            @apply size-6;
+          }
+
+          &:hover {
+            @apply -translate-y-0.5 shadow-xl;
+          }
+
+          &:active {
+            @apply translate-y-0 shadow-sm;
+          }
+
+          &:focus-visible {
+            @apply outline-2 outline-offset-4 outline-cyan-400;
+          }
+        }
+      }
+    }
+
+    & .hero-wave {
+      @apply pointer-events-none absolute bottom-0 left-0 w-full;
+      @apply h-20 lg:h-40;
+    }
+  }
+
+  .brands-carousel {
+    @apply w-full bg-white py-16 lg:py-24;
+
+    & .brands-carousel-container {
+      @apply container mx-auto px-6 lg:px-8;
+
+      & .brands-carousel-header {
+        @apply mx-auto mb-12 max-w-3xl text-center;
+
+        & .brands-carousel-label {
+          @apply mb-3 text-sm font-bold uppercase tracking-widest text-cyan-500;
+        }
+
+        & .brands-carousel-title {
+          @apply mb-5 text-3xl font-bold text-blue-900;
+          @apply md:text-4xl lg:text-5xl;
+        }
+
+        & .brands-carousel-description {
+          @apply text-base leading-relaxed text-slate-600;
+          @apply md:text-lg;
+        }
+      }
+
+      & .brands-carousel-track {
+        @apply relative w-full gap-6 overflow-x-auto;
+        @apply lg:gap-8;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          @apply hidden;
+        }
+
+        & .brands-carousel-item {
+          @apply flex w-36 shrink-0 items-center justify-center p-3;
+          @apply sm:w-44 lg:w-52;
+
+          scroll-snap-align: start;
+
+          & img {
+            @apply h-20 w-full select-none object-contain;
+            @apply transition-transform duration-300;
+
+            &:hover {
+              @apply scale-105;
+            }
+          }
+        }
+      }
+
+      & .brands-carousel-footer {
+        @apply mt-12 flex flex-col items-center gap-2 text-center;
+
+        & p {
+          @apply text-base leading-relaxed text-slate-600;
+          @apply md:text-lg;
+        }
+
+        & .brands-carousel-contact {
+          @apply font-semibold text-blue-900 underline underline-offset-4;
+          @apply transition-colors;
+
+          &:hover {
+            @apply text-cyan-500;
+          }
+
+          &:focus-visible {
+            @apply outline-2 outline-offset-2 outline-blue-900;
+          }
+        }
+      }
+    }
+  }
 
   .footer {
     @apply relative overflow-hidden;

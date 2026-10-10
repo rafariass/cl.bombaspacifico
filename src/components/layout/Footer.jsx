@@ -1,4 +1,4 @@
-const ref = 'mailto:contacto@bombaspacifico.cl?subject=Solicitud%20de%20asesor%C3%ADa%20y%20cotizaci%C3%B3n'
+const HREF = 'mailto:contacto@bombaspacifico.cl?subject=Solicitud%20de%20asesor%C3%ADa%20y%20cotizaci%C3%B3n'
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
               Contáctanos y nuestro equipo te asesorará para encontrar la mejor alternativa para tu proyecto.
             </p>
           </div>
-          <a href={ref} rel='noopener noreferrer' className='btn-footer'>
+          <a href={HREF} rel='noopener noreferrer' className='btn-footer'>
             Contactar
             <svg className='' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
               <path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M22 12H2m16 4l4-4l-4-4' />

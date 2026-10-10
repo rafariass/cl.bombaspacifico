@@ -1,6 +1,12 @@
+import Hero from '../../components/ui/Hero'
+import BrandsCarousel from '../../components/ui/BrandsCarousel'
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <Hero />
+      <BrandsCarousel />
+    </>
   )
 }
 
