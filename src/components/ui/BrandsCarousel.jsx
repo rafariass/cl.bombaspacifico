@@ -1,26 +1,14 @@
 import { useEffect, useRef } from 'react'
-
-const HREF = 'mailto:contacto@bombaspacifico.cl?subject=Solicitud%20de%20asesor%C3%ADa%20y%20cotizaci%C3%B3n'
-const BRANDS = [
-  { name: 'Marca 1', image: './assets/imgs/marcas/calpeda.png' },
-  { name: 'Marca 2', image: './assets/imgs/marcas/dreno.png' },
-  { name: 'Marca 3', image: './assets/imgs/marcas/franklin.png' },
-  { name: 'Marca 4', image: './assets/imgs/marcas/ksb.png' },
-  { name: 'Marca 5', image: './assets/imgs/marcas/leo.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/pedrollo.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/reggio.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/stairs.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/tecson.png' }
-]
-
-const AUTOPLAY_INTERVAL = 3000
-const INTERACTION_DELAY = 5000
+import { MAILTO_QUOTE_URL, BRANDS } from '../../constants/config'
 
 const BrandsCarousel = () => {
   const carouselRef = useRef(null)
   const hoveredRef = useRef(false)
   const focusedRef = useRef(false)
   const pausedUntilRef = useRef(0)
+
+  const AUTOPLAY_INTERVAL = 3000
+  const INTERACTION_DELAY = 5000
 
   useEffect(() => {
     const carousel = carouselRef.current
@@ -167,7 +155,7 @@ const BrandsCarousel = () => {
         </div>
         <div className='brands-carousel-footer'>
           <p>¿Buscas una marca o un equipo específico? Nuestro equipo de ventas puede ayudarte.</p>
-          <a href={HREF} rel='noopener noreferrer' className='brands-carousel-contact'>Consultar disponibilidad</a>
+          <a href={MAILTO_QUOTE_URL} rel='noopener noreferrer' className='brands-carousel-contact'>Consultar disponibilidad</a>
         </div>
       </div>
     </section>
