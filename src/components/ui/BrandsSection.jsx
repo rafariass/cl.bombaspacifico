@@ -15,7 +15,7 @@ const BrandsSection = () => {
     if (!carousel || BRANDS.length < 2) return
 
     const total = BRANDS.length
-    const items = Array.from(carousel.querySelectorAll('.brands-carousel-item'))
+    const items = Array.from(carousel.querySelectorAll('.brands-section-item'))
 
     let currentIndex = total
 
