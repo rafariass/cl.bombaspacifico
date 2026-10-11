@@ -119,12 +119,12 @@ const BrandsSection = () => {
   }
 
   return (
-    <section className='brands-carousel' aria-labelledby='brands-title'>
-      <div className='brands-carousel-container'>
-        <div className='brands-carousel-header'>
-          <p className='brands-carousel-label'>Nuestras marcas</p>
-          <h2 id='brands-title' className='brands-carousel-title'>Marcas que impulsan tus proyectos</h2>
-          <p className='brands-carousel-description'>
+    <section className='brands-section' aria-labelledby='brands-title'>
+      <div className='brands-section-container'>
+        <div className='brands-section-header'>
+          <p className='brands-section-label'>Nuestras marcas</p>
+          <h2 id='brands-title' className='brands-section-title'>Marcas que impulsan tus proyectos</h2>
+          <p className='brands-section-description'>
             Conoce las marcas de nuestro catálogo de bombas, motores
             sumergibles y equipos hidráulicos. Ofrecemos soluciones
             para diferentes necesidades de bombeo, acompañadas de
@@ -134,7 +134,7 @@ const BrandsSection = () => {
         </div>
         <div
           ref={carouselRef}
-          className='carousel brands-carousel-track'
+          className='carousel brands-section-track'
           aria-label='Logotipos de nuestras marcas'
           aria-live='off'
           tabIndex={0}
@@ -147,15 +147,15 @@ const BrandsSection = () => {
         >
           {[0, 1, 2].map((copyIndex) => (
             BRANDS.map((brand) => (
-              <div key={`${copyIndex}-${brand.name}`} className='carousel-item brands-carousel-item' aria-hidden={copyIndex !== 1}>
+              <div key={`${copyIndex}-${brand.name}`} className='carousel-item brands-section-item' aria-hidden={copyIndex !== 1}>
                 <img src={brand.image} alt={brand.name} loading='lazy' draggable='false' />
               </div>
             ))
           ))}
         </div>
-        <div className='brands-carousel-footer'>
+        <div className='brands-section-footer'>
           <p>¿Buscas una marca o un equipo específico? Nuestro equipo de ventas puede ayudarte.</p>
-          <a href={MAILTO_QUOTE_URL} rel='noopener noreferrer' className='brands-carousel-contact'>Consultar disponibilidad</a>
+          <a href={MAILTO_QUOTE_URL} rel='noopener noreferrer' className='brands-section-contact'>Consultar disponibilidad</a>
         </div>
       </div>
     </section>

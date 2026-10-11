@@ -16,11 +16,11 @@ const Navbar = () => {
   }, [isMenuOpen])
 
   return (
-    <header className='site-header'>
-      <p className='site-header-banner'>
+    <header className='navbar-header'>
+      <p className='navbar-banner'>
         Estamos disponibles para asesorarte y ayudarte a elegir los productos y servicios adecuados.
       </p>
-      <div className='site-header-container'>
+      <div className='navbar-container'>
         <div ref={navbarRef} className='navbar' onBlur={handleNavbarBlur}>
           <div className='navbar-brand-group'>
             <button
@@ -39,11 +39,11 @@ const Navbar = () => {
               <img src='./logo.png' alt='Logotipo de Bombas Pacífico' />
             </Link>
           </div>
-          <nav id='main-navigation' className='main-navigation' aria-label='Navegación principal' data-open={isMenuOpen}>
+          <nav id='main-navigation' className='navbar-navigation' aria-label='Navegación principal' data-open={isMenuOpen}>
             <ul className='navbar-menu'>
               {NAV_ITEMS.map((item) => (
                 <li key={item.to}>
-                  <NavLink to={item.to} end className='nav-link' onClick={() => setIsMenuOpen(false)}>
+                  <NavLink to={item.to} end className='navbar-link' onClick={() => setIsMenuOpen(false)}>
                     {item.label}
                   </NavLink>
                 </li>
