@@ -9,15 +9,15 @@ export const NAV_ITEMS = [
 ]
 
 export const BRANDS = [
-  { name: 'Marca 1', image: './assets/imgs/marcas/calpeda.png' },
-  { name: 'Marca 2', image: './assets/imgs/marcas/dreno.png' },
-  { name: 'Marca 3', image: './assets/imgs/marcas/franklin.png' },
-  { name: 'Marca 4', image: './assets/imgs/marcas/ksb.png' },
-  { name: 'Marca 5', image: './assets/imgs/marcas/leo.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/pedrollo.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/reggio.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/stairs.png' },
-  { name: 'Marca 6', image: './assets/imgs/marcas/tecson.png' }
+  { name: 'calpeda', image: './assets/imgs/brands/calpeda.png' },
+  { name: 'dreno', image: './assets/imgs/brands/dreno.png' },
+  { name: 'franklin', image: './assets/imgs/brands/franklin.png' },
+  { name: 'ksb', image: './assets/imgs/brands/ksb.png' },
+  { name: 'leo', image: './assets/imgs/brands/leo.png' },
+  { name: 'pedrollo', image: './assets/imgs/brands/pedrollo.png' },
+  { name: 'reggio', image: './assets/imgs/brands/reggio.png' },
+  { name: 'stairs', image: './assets/imgs/brands/stairs.png' },
+  { name: 'tecson', image: './assets/imgs/brands/tecson.png' }
 ]
 
 export const PRODUCTS = [

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { MAILTO_QUOTE_URL, BRANDS } from '../../constants/config'
 
-const BrandsCarousel = () => {
+const BrandsSection = () => {
   const carouselRef = useRef(null)
   const hoveredRef = useRef(false)
   const focusedRef = useRef(false)
@@ -162,4 +162,4 @@ const BrandsCarousel = () => {
   )
 }
 
-export default BrandsCarousel
+export default BrandsSection

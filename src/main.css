@@ -145,6 +145,7 @@
     @apply relative flex min-h-150 items-center overflow-hidden;
     @apply lg:min-h-175 xl:min-h-225;
     @apply border-b border-white;
+    @apply bg-center bg-cover bg-no-repeat;
 
     background-image:
       linear-gradient(
@@ -155,10 +156,6 @@
         transparent 85%
       ),
       url('/assets/imgs/hero/hero_tecnicos.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
 
     & .hero-container {
       @apply container relative z-10 mx-auto px-6 py-24;
@@ -290,8 +287,154 @@
     }
   }
 
+  .products-section {
+    @apply w-full bg-slate-50 py-16;
+    @apply lg:py-24;
+
+    & .products-section-container {
+      @apply container mx-auto px-6 lg:px-8;
+
+      & .products-section-header {
+        @apply mb-12 max-w-3xl;
+
+        & .products-section-label {
+          @apply mb-3 text-sm font-bold uppercase tracking-widest text-cyan-500;
+        }
+
+        & .products-section-title {
+          @apply mb-5 text-3xl font-bold text-blue-900;
+          @apply md:text-4xl lg:text-5xl;
+        }
+
+        & .products-section-description {
+          @apply text-base leading-relaxed text-slate-600;
+          @apply md:text-lg;
+        }
+      }
+
+      & .products-section-grid {
+        @apply grid grid-cols-1 gap-6;
+        @apply sm:grid-cols-2 xl:grid-cols-4;
+
+        & .products-section-card {
+          @apply flex h-full flex-col overflow-hidden rounded-2xl;
+          @apply border border-slate-200 bg-white shadow-sm;
+          @apply transition-all duration-300;
+
+          &:hover {
+            @apply -translate-y-1 shadow-xl;
+          }
+
+          & .products-section-image {
+            @apply relative aspect-4/3 w-full shrink-0 overflow-hidden bg-white;
+
+            & img {
+              @apply absolute inset-0 h-full w-full object-contain p-6;
+              @apply transition-transform duration-300;
+            }
+          }
+
+          &:hover .products-section-image img {
+            @apply scale-105;
+          }
+
+          & .products-section-card-body {
+            @apply flex flex-1 flex-col p-6;
+
+            & h3 {
+              @apply mb-3 text-xl font-bold text-blue-900;
+            }
+
+            & p {
+              @apply mb-6 text-sm leading-relaxed text-slate-600;
+              @apply md:text-base;
+            }
+
+            & .products-section-link {
+              @apply mt-auto inline-flex items-center gap-3;
+              @apply font-semibold text-blue-900;
+              @apply transition-colors duration-200;
+
+              & svg {
+                @apply size-5 transition-transform duration-200;
+              }
+
+              &:hover {
+                @apply text-cyan-500;
+
+                & svg {
+                  @apply translate-x-1;
+                }
+              }
+
+              &:focus-visible {
+                @apply rounded-sm outline-2 outline-offset-4 outline-blue-900;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .services-section {
+    @apply w-full;
+
+    & .services-showcase {
+      @apply relative overflow-hidden bg-blue-950 py-16 text-white;
+      @apply lg:py-30;
+      @apply bg-right md:bg-center bg-cover bg-no-repeat;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgb(0 20 55 / 95%) 0%,
+          rgb(0 35 85 / 90%) 50%,
+          rgb(0 55 110 / 75%) 100%
+        ),
+        url('/assets/imgs/services/services.png');
+
+      & .services-container {
+        @apply container relative z-10 mx-auto px-6 lg:px-8;
+
+        & .services-layout {
+          @apply grid grid-cols-1 items-center gap-10;
+          @apply xl:grid-cols-12 xl:gap-8;
+
+          & .services-info {
+            @apply xl:col-span-6;
+
+            & .services-label {
+              @apply mb-4 text-sm font-bold uppercase tracking-widest text-white/80;
+            }
+
+            & .services-title {
+              @apply mb-6 text-3xl font-bold leading-tight;
+              @apply md:text-4xl xl:text-5xl;
+
+              & span {
+                @apply text-cyan-500;
+              }
+            }
+
+            & .services-description {
+              @apply text-base leading-relaxed text-white/90;
+              @apply lg:text-lg;
+            }
+          }
+        }
+      }
+
+      & .services-wave {
+        @apply pointer-events-none absolute inset-x-0 bottom-0 w-full;
+        @apply h-16 lg:h-24;
+      }
+    }
+  }
+
   .footer {
     @apply relative overflow-hidden;
+    @apply bg-center bg-cover bg-no-repeat;
 
     background-image:
       linear-gradient(
@@ -301,9 +444,6 @@
         rgb(0 65 140 / 55%) 100%
       ),
       url('/images/footer-background.webp');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     &::after {
       content: '';
@@ -370,98 +510,6 @@
             @apply shadow-xl;
 
             transform: translateY(0);
-          }
-        }
-      }
-    }
-  }
-}
-
-@layer components {
-  .featured-products {
-    @apply w-full bg-slate-50 py-16;
-    @apply lg:py-24;
-
-    & .featured-products-container {
-      @apply container mx-auto px-6 lg:px-8;
-
-      & .featured-products-header {
-        @apply mb-12 max-w-3xl;
-
-        & .featured-products-label {
-          @apply mb-3 text-sm font-bold uppercase tracking-widest text-cyan-500;
-        }
-
-        & .featured-products-title {
-          @apply mb-5 text-3xl font-bold text-blue-900;
-          @apply md:text-4xl lg:text-5xl;
-        }
-
-        & .featured-products-description {
-          @apply text-base leading-relaxed text-slate-600;
-          @apply md:text-lg;
-        }
-      }
-
-      & .featured-products-grid {
-        @apply grid grid-cols-1 gap-6;
-        @apply sm:grid-cols-2 xl:grid-cols-4;
-
-        & .featured-products-card {
-          @apply flex h-full flex-col overflow-hidden rounded-2xl;
-          @apply border border-slate-200 bg-white shadow-sm;
-          @apply transition-all duration-300;
-
-          &:hover {
-            @apply -translate-y-1 shadow-xl;
-          }
-
-          & .featured-products-image {
-            @apply relative aspect-4/3 w-full shrink-0 overflow-hidden bg-white;
-
-            & img {
-              @apply absolute inset-0 h-full w-full object-contain p-6;
-              @apply transition-transform duration-300;
-            }
-          }
-
-          &:hover .featured-products-image img {
-            @apply scale-105;
-          }
-
-          & .featured-products-card-body {
-            @apply flex flex-1 flex-col p-6;
-
-            & h3 {
-              @apply mb-3 text-xl font-bold text-blue-900;
-            }
-
-            & p {
-              @apply mb-6 text-sm leading-relaxed text-slate-600;
-              @apply md:text-base;
-            }
-
-            & .featured-products-link {
-              @apply mt-auto inline-flex items-center gap-3;
-              @apply font-semibold text-blue-900;
-              @apply transition-colors duration-200;
-
-              & svg {
-                @apply size-5 transition-transform duration-200;
-              }
-
-              &:hover {
-                @apply text-cyan-500;
-
-                & svg {
-                  @apply translate-x-1;
-                }
-              }
-
-              &:focus-visible {
-                @apply rounded-sm outline-2 outline-offset-4 outline-blue-900;
-              }
-            }
           }
         }
       }
