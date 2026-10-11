@@ -36,7 +36,7 @@
     }
 
     & .navbar-container {
-      @apply container mx-auto px-6 lg:px-8 lg:py-2;
+      @apply container mx-auto px-6 lg:px-8 py-2;
     }
 
     & .navbar {
@@ -47,12 +47,12 @@
         @apply flex min-w-0 items-center gap-2 w-full justify-between;
 
         & .navbar-toggle {
-          @apply inline-flex size-11 items-center justify-center rounded-xl;
+          @apply inline-flex size-14 items-center justify-center rounded-xl;
           @apply bg-blue-900/5 text-blue-900 transition-colors;
           @apply lg:hidden;
 
           & svg {
-            @apply size-6;
+            @apply size-8;
           }
 
           &:hover {
@@ -68,8 +68,8 @@
           @apply inline-flex shrink-0 items-center;
 
           & img {
-            @apply w-36 object-contain;
-            @apply sm:w-44 lg:w-48;
+            @apply w-44 object-contain;
+            @apply lg:w-48;
           }
         }
       }
@@ -181,7 +181,7 @@
         }
 
         & .hero-section-button {
-          @apply inline-flex items-center justify-center gap-4;
+          @apply inline-flex items-center justify-center gap-2;
           @apply rounded-2xl px-10 py-4 font-semibold bg-cyan-500 text-white;
           @apply shadow-lg transition-all duration-150;
           @apply w-full sm:hidden;
