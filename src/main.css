@@ -75,7 +75,7 @@
       }
 
       & .navbar-navigation {
-        @apply absolute inset-x-0 top-full z-30 mt-2 hidden rounded-2xl;
+        @apply absolute inset-x-0 top-full z-30 mt-4 hidden rounded-2xl;
         @apply border border-blue-900/10 bg-white p-2 shadow-xl;
         @apply lg:static lg:ml-auto lg:mt-0 lg:block lg:w-auto lg:rounded-none;
         @apply lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none;
@@ -288,8 +288,8 @@
   }
 
   .products-section {
-    @apply w-full bg-slate-50 py-16;
-    @apply lg:py-24;
+    @apply w-full bg-slate-50;
+    @apply py-16 lg:py-24;
 
     & .products-section-container {
       @apply container mx-auto px-6 lg:px-8;
@@ -433,8 +433,8 @@
   }
 
   .services-accordion-section {
-    @apply w-full py-16;
-    @apply lg:py-20;
+    @apply w-full;
+    @apply py-16 lg:py-24;
 
     & .services-accordion-container {
       @apply container mx-auto px-6 lg:px-8;
@@ -492,8 +492,7 @@
 
     & .about-us-section-intro {
       @apply relative isolate w-full overflow-hidden bg-slate-50;
-      @apply pt-20 pb-32;
-      @apply lg:pt-28 lg:pb-40;
+      @apply py-16 lg:py-24;
 
       &::before {
         content: '';
