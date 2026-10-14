@@ -1,8 +1,8 @@
-import { ABOUT_US_ITEMS } from '../../constants/config'
+import { ABOUT_US_ITEMS } from '../constants/config'
 
 const AboutUsSection = () => {
   return (
-    <section id='conocenos' className='about-us-section' aria-label='Conócenos'>
+    <section id='about-us' className='about-us-section' aria-label='Conócenos'>
       <div className='about-us-section-intro'>
         <div className='about-us-section-intro-container'>
           <div className='about-us-section-intro-content'>

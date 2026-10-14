@@ -1,9 +1,8 @@
-import { Link } from 'react-router'
-import { PRODUCTS } from '../../constants/config'
+import { PRODUCTS } from '../constants/config'
 
 const ProductsSection = () => {
   return (
-    <section className='products-section' aria-labelledby='featured-products-title'>
+    <section id='products' className='products-section' aria-labelledby='featured-products-title'>
       <div className='products-section-container'>
         <div className='products-section-header'>
           <p className='products-section-label'>Nuestros productos</p>
@@ -19,12 +18,12 @@ const ProductsSection = () => {
               <div className='products-section-card-body'>
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
-                <Link to={product.url} className='products-section-link'>
+                <a href={product.url} className='products-section-link'>
                   Ver más
-                  <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                  <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
                     <path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M22 12H2m16 4l4-4l-4-4' />
                   </svg>
-                </Link>
+                </a>
               </div>
             </article>
           ))}

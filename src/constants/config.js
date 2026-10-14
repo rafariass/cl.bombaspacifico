@@ -3,10 +3,10 @@ export const MAILTO_QUOTE_URL = 'mailto:contacto@bombaspacifico.cl?subject=Solic
 
 export const NAV_ITEMS = [
   { to: '/', label: 'Inicio' },
-  { to: '/marcas', label: 'Marcas' },
-  { to: '/productos', label: 'Productos' },
-  { to: '/servicios', label: 'Servicios' },
-  { to: '/conocenos', label: 'Conócenos' }
+  { to: '#brands', label: 'Marcas' },
+  { to: '#products', label: 'Productos' },
+  { to: '#services', label: 'Servicios' },
+  { to: '#about-us', label: 'Conócenos' }
 ]
 
 export const BRANDS = [

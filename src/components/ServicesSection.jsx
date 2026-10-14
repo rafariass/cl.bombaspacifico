@@ -3,7 +3,7 @@ import ServicesAccordion from './ServicesAccordion'
 const ServicesSection = () => {
   return (
     <>
-      <section className='services-section' aria-labelledby='services-title'>
+      <section id='services' className='services-section' aria-labelledby='services-title'>
         <div className='services-showcase'>
           <div className='services-container'>
             <div className='services-layout'>

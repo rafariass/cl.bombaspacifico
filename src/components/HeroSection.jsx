@@ -1,8 +1,8 @@
-import { WHATSAPP_QUOTE_URL } from '../../constants/config'
+import { WHATSAPP_QUOTE_URL } from '../constants/config'
 
 const HeroSection = () => {
   return (
-    <section className='hero-section'>
+    <section id='hero' className='hero-section'>
       <div className='hero-section-container'>
         <div className='hero-section-content'>
           <h1 className='hero-section-title'>
@@ -15,7 +15,7 @@ const HeroSection = () => {
           </p>
           <a href={WHATSAPP_QUOTE_URL} className='hero-section-button' target='_blank' rel='noopener noreferrer' aria-label='Solicitar cotización por WhatsApp'>
             Cotiza con nosotros
-            <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+            <svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
               <path fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M22 12H2m16 4l4-4l-4-4' />
             </svg>
           </a>

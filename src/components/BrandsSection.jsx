@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { MAILTO_QUOTE_URL, BRANDS } from '../../constants/config'
+import { MAILTO_QUOTE_URL, BRANDS } from '../constants/config'
 
 const BrandsSection = () => {
   const carouselRef = useRef(null)
@@ -119,7 +119,7 @@ const BrandsSection = () => {
   }
 
   return (
-    <section className='brands-section' aria-labelledby='brands-title'>
+    <section id='brands' className='brands-section' aria-labelledby='brands-title'>
       <div className='brands-section-container'>
         <div className='brands-section-header'>
           <p className='brands-section-label'>Nuestras marcas</p>

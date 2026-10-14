@@ -1,4 +1,4 @@
-import { SERVICES } from '../../constants/config'
+import { SERVICES } from '../constants/config'
 
 const ServicesAccordion = () => {
   return (
