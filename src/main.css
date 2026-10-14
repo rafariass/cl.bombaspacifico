@@ -455,7 +455,7 @@
           }
 
           & .services-accordion-title {
-            @apply flex items-center gap-4 pl-8! pr-12 bg-white;
+            @apply flex items-center gap-4 py-5! pl-8! pr-12 bg-white;
             @apply text-base font-semibold text-slate-600;
             @apply transition-colors duration-200;
             @apply md:text-lg;
@@ -480,6 +480,148 @@
 
             & p + p {
               @apply mt-4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .about-us-section {
+    @apply w-full;
+
+    & .about-us-section-intro {
+      @apply relative isolate w-full overflow-hidden bg-slate-50;
+      @apply pt-20 pb-32;
+      @apply lg:pt-28 lg:pb-40;
+
+      &::before {
+        content: '';
+
+        @apply pointer-events-none absolute inset-0 -z-10;
+        @apply opacity-40 lg:opacity-100;
+
+        background-image:
+          linear-gradient(
+            90deg,
+            rgb(248 250 252 / 20%) 0%,
+            rgb(248 250 252 / 85%) 25%,
+            rgb(248 250 252 / 98%) 45%,
+            rgb(248 250 252 / 95%) 100%
+          ),
+          url('/assets/imgs/about-us/about-us.png');
+        background-position: center, left center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      & .about-us-section-intro-container {
+        @apply container relative z-10 mx-auto px-6 lg:px-8;
+
+        & .about-us-section-intro-content {
+          @apply mx-auto flex max-w-3xl flex-col items-center text-center;
+
+          & .about-us-section-intro-label {
+            @apply mb-4 text-sm font-bold uppercase tracking-widest text-blue-900;
+            @apply md:text-base;
+          }
+
+          & .about-us-section-intro-title {
+            @apply mb-6 text-3xl font-bold leading-tight text-blue-900;
+            @apply md:text-4xl lg:text-5xl;
+
+            & span {
+              @apply text-cyan-500;
+            }
+          }
+
+          & .about-us-section-intro-divider {
+            @apply mb-8 h-1 w-20 rounded-full;
+            @apply bg-linear-to-r from-blue-900 to-cyan-500;
+          }
+
+          & .about-us-section-intro-description {
+            @apply max-w-3xl text-base leading-relaxed text-slate-600;
+            @apply md:text-lg lg:text-xl;
+          }
+        }
+      }
+
+      & .about-us-section-intro-wave {
+        @apply pointer-events-none absolute inset-x-0 bottom-0 w-full;
+        @apply h-20 lg:h-44;
+      }
+    }
+
+    & .about-us-section-details {
+      @apply relative w-full bg-slate-50 py-8;
+
+        &::after {
+          content: '';
+
+          @apply pointer-events-none absolute inset-x-0 bottom-0 h-24;
+          @apply bg-linear-to-b from-transparent to-white;
+        }
+
+      & .about-us-section-container {
+        @apply container mx-auto px-6 lg:px-8;
+
+        & .about-us-section-row {
+          @apply relative grid grid-cols-1 items-center gap-10 py-12;
+          @apply lg:grid-cols-2 lg:gap-16 lg:py-16;
+
+          &:not(:last-child)::after {
+            content: '';
+
+            @apply absolute bottom-0 left-1/2 -translate-x-1/2;
+            @apply h-1 w-48 rounded-full;
+            @apply bg-linear-to-r from-blue-900 to-cyan-500;
+          }
+
+          &[data-reverse='true'] {
+            & .about-us-section-media {
+              @apply lg:order-first;
+            }
+          }
+
+          & .about-us-section-content {
+            @apply flex flex-col items-start;
+
+            & .about-us-section-label {
+              @apply mb-3 text-sm font-bold uppercase tracking-widest text-blue-900;
+            }
+
+            & .about-us-section-title {
+              @apply mb-6 text-shadow-md text-4xl font-bold leading-tight text-blue-900;
+              @apply md:text-5xl;
+
+              & span {
+                @apply text-cyan-500;
+              }
+            }
+
+            & .about-us-section-divider {
+              @apply mb-8 h-1 w-20 rounded-full;
+              @apply bg-linear-to-r from-blue-900 to-cyan-500;
+            }
+
+            & .about-us-section-description {
+              @apply max-w-2xl text-base leading-relaxed text-slate-600;
+              @apply md:text-lg lg:text-xl;
+            }
+          }
+
+          & .about-us-section-media {
+            @apply relative aspect-video w-full overflow-hidden rounded-xl;
+            @apply bg-slate-100 shadow-lg;
+            @apply transition-transform duration-300;
+
+            & img {
+              @apply h-full w-full object-cover pointer-events-none;
+            }
+
+            &:hover {
+              @apply scale-105 shadow-xl;
             }
           }
         }
@@ -516,6 +658,7 @@
     & .footer-cta-wave {
       @apply absolute top-0 left-0 w-full pointer-events-none;
 
+      transform: translateY(-2px);
       height: 120px;
       z-index: 1;
 

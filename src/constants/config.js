@@ -3,6 +3,7 @@ export const MAILTO_QUOTE_URL = 'mailto:contacto@bombaspacifico.cl?subject=Solic
 
 export const NAV_ITEMS = [
   { to: '/', label: 'Inicio' },
+  { to: '/marcas', label: 'Marcas' },
   { to: '/productos', label: 'Productos' },
   { to: '/servicios', label: 'Servicios' },
   { to: '/conocenos', label: 'Conócenos' }
@@ -223,5 +224,38 @@ export const SERVICES = [
       contáctanos. Podemos revisar tu requerimiento y orientarte sobre la atención disponible
       para tu proyecto.`
     ]
+  }
+]
+
+export const ABOUT_US_ITEMS = [
+  {
+    id: 'quienes-somos',
+    label: 'Conoce Nuestra Empresa',
+    title: 'Quiénes',
+    highlight: 'Somos',
+    description: 'En Bombas Pacífico somos especialistas en motores eléctricos sumergibles, bombas de pozo profundo e insumos para aplicaciones hidráulicas. Nuestro objetivo es ofrecer productos de primera calidad a precios competitivos, acompañados de asesoría técnica y un servicio confiable. Nos enfocamos en comprender las necesidades de nuestros clientes, brindando orientación profesional y cercana para ayudarlos a encontrar las soluciones más adecuadas para sus proyectos.',
+    image: './assets/imgs/about-us/quienes-somos.png',
+    alt: 'Sistema de bombeo industrial descargando agua',
+    reverse: false
+  },
+  {
+    id: 'mision',
+    label: 'Nuestro Compromiso',
+    title: 'Nuestra',
+    highlight: 'Misión',
+    description: 'Nuestra misión es entregar una experiencia de satisfacción a cada cliente, ofreciendo productos de primera calidad, respaldados por la garantía y confianza de nuestros proveedores. Nos comprometemos a brindar una atención personalizada y asesoría profesional, orientando a nuestros clientes en cada decisión. Trabajamos para que encuentren soluciones confiables que respondan a sus necesidades, manteniendo siempre un servicio cercano, responsable y comprometido con la calidad.',
+    image: './assets/imgs/about-us/mision.png',
+    alt: 'Técnico trabajando en un sistema de bombeo industrial',
+    reverse: true
+  },
+  {
+    id: 'vision',
+    label: 'Mirando Hacia el Futuro',
+    title: 'Nuestra',
+    highlight: 'Visión',
+    description: 'Aspiramos a consolidarnos como una de las empresas líderes del sector de sistemas de bombeo y soluciones hidráulicas, alcanzando una sólida presencia a nivel nacional. Buscamos crecer sobre la base de nuestros valores y factores de éxito: ingeniería, asesoría, servicio y calidad. Queremos avanzar manteniendo nuestro compromiso con la atención profesional, la confianza de nuestros clientes y la calidad de los productos que ofrecemos.',
+    image: './assets/imgs/about-us/vision.png',
+    alt: 'Instalación de energía solar en un entorno rural',
+    reverse: false
   }
 ]
