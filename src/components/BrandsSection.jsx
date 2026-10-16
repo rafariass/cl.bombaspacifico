@@ -137,7 +137,6 @@ const BrandsSection = () => {
           className='carousel brands-section-track'
           aria-label='Logotipos de nuestras marcas'
           aria-live='off'
-          tabIndex={0}
           onPointerEnter={handlePointerEnter}
           onPointerLeave={handlePointerLeave}
           onPointerDown={pauseTemporarily}
